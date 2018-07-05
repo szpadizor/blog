@@ -7,11 +7,11 @@ ob_start()
 ?>
 
 
+    <div align="center">
+        <div class="col-3">
 
-<div class="container" align="center">
 
-
-    <form class="form-signin" method="POST" action="">
+    <form class="form-signin" method="POST" action="reg">
         <img src="/tpl/img/auth.jpg" alt="logo">
         <br>
         <br>
@@ -28,9 +28,10 @@ ob_start()
             <input type="password" id="inputPassword" name="pass2" class="form-control" placeholder="Повторіть пароль*"
                    required>
             <br>
-            <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Увійти">
+            <input class="btn btn-primary" type="submit" name="submit" value="Реєстрація">
     </form>
-</div>
+    <h5>паролі не співпад</h5>
+        </div></div>
 <?php
 $content = ob_get_contents();
 ob_end_clean();

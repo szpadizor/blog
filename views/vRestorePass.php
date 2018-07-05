@@ -6,9 +6,8 @@ ob_start()
 
 ?>
 
-
-
-<div class="container" align="center">
+    <div align="center">
+        <div class="col-3">
 
 
     <form class="form-signin" method="POST" action="">
@@ -21,11 +20,11 @@ ob_start()
             <input type="text" id="inputEmail" name="mail" class="form-control" placeholder="E-mail*" required
                    autofocus>
             <br>
-            <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit" value="Отримати пароль">
+            <input class="btn btn-primary" type="submit" name="submit" value="Отримати пароль">
     </form>
-</div>
+        </div></div>
 <?php
 $content = ob_get_contents();
 ob_end_clean();
 
-include '../tpl/index.php';
+include './tpl/index.php';

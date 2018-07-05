@@ -1,11 +1,47 @@
 <?php
 
-//список блогів богера вид
+
 
 ob_start();
 ?>
+<div style="
 
-   <P></P>
+	  margin: 0 auto;
+
+    ">
+select menu feom menu
+
+<?php foreach ($con as $content):?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">
+                    <a href="blogger/<?php echo $content['id'];?>">
+                        <h2 class="post-title">
+                            <?php echo $content['username'];?>
+                        </h2>
+                    </a>
+
+                </div>
+                <hr>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+<?endforeach; ?>
+
+
+    <a href="/new_post" class="btn btn-outline-success">Створити пост</a>
+    <a href="/edit_post" type="button" class="btn btn-primary" disabled>Редагувати пост</a>
+    <a href="delete_post" type="button" class="btn btn-outline-danger">Видалити пост</a>
+    <a href="#" type="button" class="btn btn-primary" disabled>Текст кнопки</a></div>
+<br>
 
     <div class="container">
       <div class="row">
@@ -13,10 +49,10 @@ ob_start();
           <div class="post-preview">
 
 <h2 class="post-title">
-                  <?php echo $e['title'] ;?>
+                  <?php echo $con['title'] ;?>
      </h2>
               <h5 class="post-subtitle">"
-                  <?php echo $e['text'] ;?>
+                  <?php echo $con['text'] ;?>
 </h5>
 
             <p class="post-meta">Posted by
@@ -24,10 +60,10 @@ ob_start();
 
 
 
-<?php echo $e['autor'] ;?>
+<?php echo $con['autor'] ;?>
          </a>
               on
-<?php echo $e['date'] ;?>
+<?php echo $con['date'] ;?>
      </p>
           </div>
           <hr>
@@ -46,5 +82,5 @@ ob_start();
 //var_dump($e);
 $content = ob_get_contents();
 ob_end_clean();
-
-include 'tpl/index.php';
+//return $content;
+//include 'tpl/index.php';

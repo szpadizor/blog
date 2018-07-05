@@ -38,16 +38,15 @@
     $controllerName = ucfirst($controllerName);
        //  напр. виходить $controllerName = BlogController
 
-
-
     $action='action'.ucfirst(array_shift($divide));
 
         // в масиві $divide  залишились параметри [0] => oleg, [1]=> 22
 
         // створюю шлях до необхідного контролера
     $controllerWay = ROOT.'/controllers/'.$controllerName.'.php';
-    include_once ($controllerWay);
-
+    include ($controllerWay);
+   /* debug($controllerWay);
+    debug($action);*/
     $controllerRun = new $controllerName;
     $controllerRun->$action($divide);
         if($controllerRun == true){break;}

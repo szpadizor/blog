@@ -12,8 +12,12 @@ require_once (ROOT.'/core/Router.php');
 require_once (ROOT.'/core/Db_connect.php');
 //include (ROOT.'/tpl/post.php');
 
+function debug($param){
+    echo '<pre>';
+    var_dump($param);
+    echo '</pre>';
+}
 
 // go
 $router = new Router();
-
 $router->go();

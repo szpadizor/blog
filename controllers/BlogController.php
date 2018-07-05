@@ -1,43 +1,50 @@
 <?php
 
 
-include_once(ROOT .'/models/mBlogger.php');
+include(ROOT .'/models/mBlogger.php');
+include (ROOT.'/models/mAuth.php');
+
        class BlogController {
 
-           //список блогів вибраного блогерa
-       public function actionListblogs($divide){
 
-          // $nes = array();
-           $e = mBlogger::getListBlogs($divide);
 
-include_once(ROOT .'/views/vListOfBlogs.php');
 
+           /////////////отримуєм список блогерів/////////////
+           public function actionbloggerslist(){
+               // echo 'вивести всіх блогерів, act bloggerslist';
+               $objMenu = new mAuth();
+               $buildedMenu=$objMenu->menu_build();
+               $obj = new mBlogger();
+               $con = $obj->getListOfBlogers();
+
+               include_once(ROOT .'/views/vListOfBloggers.php');
+           }
+           ///////////////список блогів вибраного блогерa/////////////
+       public  function actionListblogs($divide){
+           $cont = new mBlogger();
+           $con= $cont->getListBlogs($divide);
+           $buildMenu = new mAuth();
+           $buildedMenu = $buildMenu->menu_build();
+           include(ROOT .'/views/vListOfBlogs.php');
        }
-          //сторінка з конкретним блогом
+           /////////////сторінка з конкретним блогом//////////////
        public  function actionBlogpost($divide){
+       session_start();
+           $con = new mBlogger();
+           $con->getBlogtext($divide);
+           $buildedMenu = new mAuth();
+           $buildedMenu->menu_build();
 
-
-     $e = mBlogger::getBlogtext($divide);
-
-
-         include_once(ROOT .'/views/vPost.php');
-
-
-
-
-
-       }
-         //отримуєм список блогерів
-       public function actionbloggerslist(){
-
-             echo 'вивести всіх блогерів, act bloggerslist';
-
-             $this->srav();
-
-
+          include_once(ROOT .'/views/vPost.php');
 
        }
 
+
+
+
+
+
+            ////////////////////////////////
        public function  srav(){
            //$today = date("Y-m-d H:i:s");
           // echo $today;
