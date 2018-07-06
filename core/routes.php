@@ -3,6 +3,9 @@
  return array(
      //  uri blogger/oleg/22
 // blog(controller)/blogpost(action)/$1(bloggername)/$2(post)'
+    'editpost' => 'tool/editpost',
+    'edit-go' => 'tool/editet',
+    'deletepost' => 'tool/deletepost',
     'vfind' =>'tool/vfind',
     'newpost'=>'tool/newpost',
     'new-go'=>'tool/newgo',
@@ -14,15 +17,13 @@
     'vrestorepass' =>'auth/vrestorepass',
     'blogger' => 'blog/bloggerslist',
     'auth' => 'auth/auth',
-    // 'vauth' => 'auth/vauth',
     'reg' => 'auth/reg',
     'restorepass' => 'auth/restorepass',
     'logout' => 'auth/logout',
     'index.php' => 'blog/bloggerslist',
     '' => 'blog/bloggerslist',
-    'write' => 'tool/write_to_sql',
-    'edit_post' => 'tool/edit_post',
-    'delete_post' => 'tool/delete_post'
+    'write' => 'tool/write_to_sql'
+
 
 
             //AdminController/actionAdmincp

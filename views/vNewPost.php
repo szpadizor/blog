@@ -2,7 +2,8 @@
 
 ob_start()
 ?>
-
+    <div align="center">
+        <div class="col-6">
 
             <form  enctype="multipart/form-data" action="/new-go" method="post">
 
@@ -24,7 +25,7 @@ ob_start()
 
 
 </form>
-
+        </div></div>
 
 
 <?php

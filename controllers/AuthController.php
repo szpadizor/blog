@@ -101,10 +101,13 @@ ob_clean();
 
 
     public function actionLogout(){
+       session_start();
         session_destroy();
         //Робимо редірект
-        header("Location: http://blog.vodokanal.te.ua/");
-        exit;
+       header("Location: http://blog.vodokanal.te.ua/");
+       exit;
+
+     // debug($_SESSION);
     }
 
 

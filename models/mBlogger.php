@@ -28,7 +28,7 @@ class mBlogger
 // echo 'список блогів вибраного блогерa';
         $pdoconnect = Db_connect::link();
         $user_id = $divide[0];
-        $sql = "SELECT content.title, content.date_of_release, content.short_description, users.username FROM content
+        $sql = "SELECT content.title, content.date_of_release, content.id, users.username FROM content
 INNER JOIN users ON content.blogger_id = users.id WHERE blogger_id = '$user_id'";
 
         $content = array();
@@ -42,7 +42,7 @@ INNER JOIN users ON content.blogger_id = users.id WHERE blogger_id = '$user_id'"
             $content[$i]['title'] = $row['title'];
             $content[$i]['username'] = $row['username'];
             $content[$i] ['date_of_release'] = $row['date_of_release'];
-            $content[$i] ['short_description'] = $row['short_description'];
+            $content[$i] ['id'] = $row['id'];
             $i++;
 
         }
@@ -53,10 +53,10 @@ INNER JOIN users ON content.blogger_id = users.id WHERE blogger_id = '$user_id'"
     public static function getBlogtext($divide)
     {
         // echo 'сторінка з конкретним блогом';
-
+        $user_id = $divide[0];
         $id = $divide[1];
         $pdoconnect = Db_connect::link();
-        $sql = "SELECT content.title, content.text, content.date_of_release, users.username FROM content
+        $sql = "SELECT content.title, content.text, content.date_of_release, users.username, content.img,content.blogger_id FROM content
 INNER JOIN users ON content.blogger_id = users.id WHERE content.id = $id";
         $result = $pdoconnect->query($sql);
         $result->setFetchMode(PDO::FETCH_ASSOC);
@@ -65,6 +65,9 @@ INNER JOIN users ON content.blogger_id = users.id WHERE content.id = $id";
         $text = $content['text'];
         $date = $content['date_of_release'];
         $autor = $content['username'];
+        $img = $content['img'];
+        $blogger_id = $content['blogger_id'];
+
         //  counter go //
         $sql = "CALL kpvoda_blog.counter($id)";
 
@@ -72,7 +75,7 @@ INNER JOIN users ON content.blogger_id = users.id WHERE content.id = $id";
         $result = $pdoconnect->exec($sql);
 
         //return array('menu' => $to_menu,
-        return array('title' => $title, 'text' => $text, 'date' => $date, 'autor' => $autor);
+        return array('title' => $title, 'text' => $text, 'date' => $date, 'autor' => $autor, 'img' => $img,'blogger_id'=> $blogger_id );
 
     }
 

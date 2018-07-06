@@ -10,12 +10,12 @@ ob_start();
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-preview">
-                    <a href="post.html">
+                    <a href="/blogger/<?php echo $content['id'];?>/<?php echo $content['id'];?>">
                         <h2 class="post-title">
                             <?php echo $content['title'];?>
                         </h2>
                         <h3 class="post-subtitle">
-                            <?php echo $content['short_description'];?>
+
                         </h3>
                     </a>
                     <p class="post-meta">Posted by
@@ -27,7 +27,7 @@ ob_start();
             </div>
         </div>
     </div>
-    </div>
+
 
 
 

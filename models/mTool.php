@@ -3,7 +3,7 @@
 
 class mTool
 {
-    protected  $pdoconnect;
+    public  $pdoconnect;
 
     public function __construct()
     {
@@ -19,14 +19,6 @@ class mTool
 
         return $toolMenu;
     }
-
-public function new_post(){
-        echo 'new post';
-}
-
-
-
-
 
 
    public function mSetPost(){
@@ -68,5 +60,16 @@ return $q;
     }
    }
 
+
+
+
+   public function mGetPost(){
+
+   $sql=  "SELECT content.title, content.text, content.id, content.blogger_id FROM content WHERE id = 2 ";
+
+       $result = $this->pdoconnect->query($sql);
+       $row = $result->fetch(PDO::FETCH_ASSOC);
+     return  $row;
+   }
 }
 

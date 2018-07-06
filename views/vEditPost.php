@@ -1,38 +1,28 @@
 <?php
 ob_start()
-
-
-//SELECT title, fulltext FROM blogs WHERE  blogger_id = $blogg_id
-// and post id = post id;
-
-
-//$post id =
-//$blogg_id =
-
-// масив
-
-//'write' => 'tool/write_to_sql',
-
 ?>
 
 <div align="center">
-    <div class="col-3">
+    <div class="col-6">
 
 
-        <form class="form-signin" method="POST" action="/write">
-           <br>
+        <form  enctype="multipart/form-data" action="/edit-go" method="post">
 
-            <h2 class="form-signin-heading" >
+            <div align="center" class="form-group">
 
-                <input id="title" name="title" class="form-control"  required
-                       autofocus>
-                <br>
-                <input id="fulltext" name="fulltext" class="form-control"
-                       required>
+                <span style="font-family: 'Caveat', cursive; font-size: 30px; ">Заголовок поста</span>
+                <input  class="form-control" rows="5" name="zagol" value="<?php echo $a1;?>" required   />
 
-                <br>
+                <span style="font-family: 'Caveat', cursive; font-size: 30px; "> Повний текст</span>
 
-                <input class="btn btn-primary" type="submit" name="submit" value="Змінити">
+
+                <textarea class="form-control" name="fulltext" rows="8" id="comment"  required><?php echo $a2;?></textarea>
+                <br /><br />
+
+
+                <input type="submit" name="enter" class="l" value="Змінити" />
+
+
         </form>
     </div>
 
@@ -43,4 +33,8 @@ ob_start()
 $content = ob_get_contents();
 ob_end_clean();
 
+
 include './tpl/index.php';
+
+
+

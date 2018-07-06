@@ -3,7 +3,7 @@
 
 include(ROOT .'/models/mBlogger.php');
 include (ROOT.'/models/mAuth.php');
-
+include (ROOT.'/models/mTool.php');
        class BlogController {
 
 
@@ -30,10 +30,13 @@ include (ROOT.'/models/mAuth.php');
            /////////////сторінка з конкретним блогом//////////////
        public  function actionBlogpost($divide){
        session_start();
-           $con = new mBlogger();
-           $con->getBlogtext($divide);
-           $buildedMenu = new mAuth();
-           $buildedMenu->menu_build();
+           $con0 = new mBlogger();
+           $con = $con0->getBlogtext($divide);
+           $buildedMenu0  = new mAuth();
+           $buildedMenu=$buildedMenu0->menu_build();
+           $tool_Menu = new mTool();
+           $toolmenu = $tool_Menu->toolMenu();
+
 
           include_once(ROOT .'/views/vPost.php');
 

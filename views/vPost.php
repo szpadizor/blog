@@ -1,47 +1,29 @@
 <?php
-
-
-
 ob_start();
+//debug($_SESSION);
 ?>
-<div style="
 
-	  margin: 0 auto;
 
-    ">
-select menu feom menu
 
-<?php foreach ($con as $content):?>
+<?php
+    if (isset($_SESSION['logged_user'])&& $_SESSION['logged_user'] == true && $_SESSION['logged_id'] == $con['blogger_id']){
+        echo '<div style="margin-left: 43%">';
+    foreach ($toolmenu as $tools){
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
-                <div class="post-preview">
-                    <a href="blogger/<?php echo $content['id'];?>">
-                        <h2 class="post-title">
-                            <?php echo $content['username'];?>
-                        </h2>
-                    </a>
+       //  debug($tools);
+        $knopky = $tools['knopky'];
+        $link = $tools['link'];
 
-                </div>
-                <hr>
 
-            </div>
-        </div>
-    </div>
-    </div>
+      echo "<a class=\"btn btn-primary\" href=\"$link\">$knopky</a>";
+      echo '&nbsp;';
 
 
 
 
-<?endforeach; ?>
-
-
-    <a href="/new_post" class="btn btn-outline-success">Створити пост</a>
-    <a href="/edit_post" type="button" class="btn btn-primary" disabled>Редагувати пост</a>
-    <a href="delete_post" type="button" class="btn btn-outline-danger">Видалити пост</a>
-    <a href="#" type="button" class="btn btn-primary" disabled>Текст кнопки</a></div>
-<br>
+    }echo '</div>';
+    }else{echo '';}
+?>
 
     <div class="container">
       <div class="row">
@@ -49,14 +31,15 @@ select menu feom menu
           <div class="post-preview">
 
 <h2 class="post-title">
-                  <?php echo $con['title'] ;?>
-     </h2>
+               <?php echo $con['title'] ;?>
+     </h2><hr>
+            <div style="text-align: center">  <img  src="/img<?php echo $con['img'] ;?>"></div><hr>
               <h5 class="post-subtitle">"
                   <?php echo $con['text'] ;?>
 </h5>
 
             <p class="post-meta">Posted by
-              <a href="#">
+              <a href="/blogger/<?php echo $con['blogger_id'] ;?>">
 
 
 
@@ -70,7 +53,7 @@ select menu feom menu
 
           <!-- Pager -->
           <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#">інші дописи автора &rarr;</a>
+            <a class="btn btn-primary float-right" href="/blogger/<?php echo $con['blogger_id'] ;?>">інші дописи автора &rarr;</a>
           </div>
         </div>
       </div>
@@ -79,8 +62,10 @@ select menu feom menu
     <hr>
 
 <?php
-//var_dump($e);
+
+
+
 $content = ob_get_contents();
 ob_end_clean();
 //return $content;
-//include 'tpl/index.php';
+include 'tpl/index.php';
