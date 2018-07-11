@@ -67,6 +67,9 @@ class ToolController
 
     public   function  actionEditpost(){
         session_start();
+
+
+
         $buildedMenu = $this->proverka->menu_build();
 
         $getopst = new mTool();
@@ -75,7 +78,7 @@ class ToolController
 
         $a1 = $getopst['title'];
         $a2 = $getopst ['text'];
-        $_SESSION['id']  = $getopst ['id'];
+        $_SESSION['id'] = $getopst ['id'];
         $a4 = $getopst ['blogger_id'];
 
 
@@ -121,7 +124,19 @@ class ToolController
 
     public  function  actionDeletepost(){
         session_start();
-      //  $buildedMenu = $this->proverka->menu_build();
+        $blogger_id = $_SESSION['logged_id'];
+        $post_id= $_SESSION['id'] ;
+        $db = Db_connect::link();
+
+
+        $sql= "DELETE FROM content WHERE content.id = '$post_id'";
+
+
+
+        if ($result = $db->exec($sql)){
+            header("Location: http://blog.vodokanal.te.ua/blogger/$blogger_id");
+        }else debug($post_id);
+
 
     }
 }

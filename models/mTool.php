@@ -64,8 +64,8 @@ return $q;
 
 
    public function mGetPost(){
-
-   $sql=  "SELECT content.title, content.text, content.id, content.blogger_id FROM content WHERE id = 2 ";
+       $id = $_SESSION['id'];
+   $sql=  "SELECT content.title, content.text, content.id, content.blogger_id FROM content WHERE id = '$id' ";
 
        $result = $this->pdoconnect->query($sql);
        $row = $result->fetch(PDO::FETCH_ASSOC);

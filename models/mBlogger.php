@@ -55,6 +55,7 @@ INNER JOIN users ON content.blogger_id = users.id WHERE blogger_id = '$user_id'"
         // echo 'сторінка з конкретним блогом';
         $user_id = $divide[0];
         $id = $divide[1];
+        $_SESSION['id'] = $id ;
         $pdoconnect = Db_connect::link();
         $sql = "SELECT content.title, content.text, content.date_of_release, users.username, content.img,content.blogger_id FROM content
 INNER JOIN users ON content.blogger_id = users.id WHERE content.id = $id";

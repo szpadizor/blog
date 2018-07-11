@@ -11,7 +11,7 @@ ob_start()
         <div class="col-3">
 
 
-    <form class="form-signin" method="POST" action="">
+    <form class="form-signin" method="POST" action="/restorepass">
 
         <br>
         <h6>відновлення пароля</h6>

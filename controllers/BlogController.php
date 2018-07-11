@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 include(ROOT .'/models/mBlogger.php');
 include (ROOT.'/models/mAuth.php');
 include (ROOT.'/models/mTool.php');
@@ -12,6 +12,7 @@ include (ROOT.'/models/mTool.php');
            /////////////отримуєм список блогерів/////////////
            public function actionbloggerslist(){
                // echo 'вивести всіх блогерів, act bloggerslist';
+
                $objMenu = new mAuth();
                $buildedMenu=$objMenu->menu_build();
                $obj = new mBlogger();
@@ -21,15 +22,21 @@ include (ROOT.'/models/mTool.php');
            }
            ///////////////список блогів вибраного блогерa/////////////
        public  function actionListblogs($divide){
+
            $cont = new mBlogger();
            $con= $cont->getListBlogs($divide);
            $buildMenu = new mAuth();
            $buildedMenu = $buildMenu->menu_build();
+
            include(ROOT .'/views/vListOfBlogs.php');
+
+
+
+
        }
            /////////////сторінка з конкретним блогом//////////////
        public  function actionBlogpost($divide){
-       session_start();
+
            $con0 = new mBlogger();
            $con = $con0->getBlogtext($divide);
            $buildedMenu0  = new mAuth();

@@ -14,6 +14,7 @@
     'blogger/([0-9]+)' => 'blog/listblogs/$1',
     'vauth' => 'auth/vauth',
     'vreg' => 'auth/vreg',
+    'change' => 'auth/change',
     'vrestorepass' =>'auth/vrestorepass',
     'blogger' => 'blog/bloggerslist',
     'auth' => 'auth/auth',

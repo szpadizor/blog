@@ -7,9 +7,9 @@ echo '<div  style="margin: 0 auto; width: 200px;">';
     echo $result1;
  echo'</div>';
 ?>
-<div class="container">
+<div align="center" class="container">
     <form class="form-signin">
-        <input class="btn btn-lg btn-primary btn-block" type="button" onclick="location='../index.php';"  value="повернутись">
+        <input class="btn  btn-primary " type="button" onclick="location='../index.php';"  value="повернутись">
     </form>
 </div>
 <?php
