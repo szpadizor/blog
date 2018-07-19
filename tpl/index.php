@@ -21,9 +21,15 @@
     <!-- Custom styles for this template -->
     <link href="http://blog.vodokanal.te.ua/tpl/css/clean-blog.min.css" rel="stylesheet">
 
+
+
+
   </head>
 
   <body>
+
+
+
       <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -45,14 +51,6 @@
       </div>
     </nav>
 
-
-
-
-
-
-
-
-
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('http://blog.vodokanal.te.ua/tpl/img/home-bg.jpg')">
       <div class="overlay"></div>
@@ -60,8 +58,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>-</h1>
-              <span class="subheading">-</span>
+              <h1>&nbsp;</h1>
+              <span class="subheading">&nbsp;</span>
             </div>
           </div>
         </div>
@@ -69,14 +67,7 @@
     </header>
 
     <!-- Main Content -->
-
-
-
-
-
 <?php echo $content;?>
-
-
 
     <!-- Footer -->
     <footer>
@@ -101,11 +92,13 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="http://blog.vodokanal.te.ua/tpl/vendor/jquery/jquery.min.js"></script>
-    <script src="http://blog.vodokanal.te.ua/tpl/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="http://blog.vodokanal.te.ua/tpl/vendor/jquery/jquery.min.js"></script>
+ <script src="http://blog.vodokanal.te.ua/tpl/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="http://blog.vodokanal.te.ua/tpl/js/clean-blog.min.js"></script>
+      <script type="text/javascript" src="/tpl/js/script.js"></script>
+
 
   </body>
 

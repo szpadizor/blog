@@ -29,7 +29,7 @@ class AuthController
         //echo 'інклюдимо шаблон головної з меню залогіненого44';
         $buildedMenu = $this->proverka->menu_build();
 
-   // include './views/vListOfBlogs.php';
+   // include './views/vListOfBlogs0.php';
 
     }elseif ($result == 0){
 ob_start();

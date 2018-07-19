@@ -34,7 +34,7 @@ ob_start();
                <?php echo $con['title'] ;?>
      </h2><hr>
             <div style="text-align: center">  <img  src="/img<?php echo $con['img'] ;?>"></div><hr>
-              <h5 class="post-subtitle">"
+              <h5 class="post-subtitle">
                   <?php echo $con['text'] ;?>
 </h5>
 

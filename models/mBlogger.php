@@ -28,7 +28,7 @@ class mBlogger
 // echo 'список блогів вибраного блогерa';
         $pdoconnect = Db_connect::link();
         $user_id = $divide[0];
-        $sql = "SELECT content.title, content.date_of_release, content.id, users.username FROM content
+        $sql = "SELECT content.title, content.date_of_release, content.id, users.username, content.statistic FROM content
 INNER JOIN users ON content.blogger_id = users.id WHERE blogger_id = '$user_id'";
 
         $content = array();
@@ -43,6 +43,8 @@ INNER JOIN users ON content.blogger_id = users.id WHERE blogger_id = '$user_id'"
             $content[$i]['username'] = $row['username'];
             $content[$i] ['date_of_release'] = $row['date_of_release'];
             $content[$i] ['id'] = $row['id'];
+            $content[$i] ['statistic'] = $row['statistic'];
+            $content[$i] ['unix'] =  strtotime($content[$i] ['date_of_release']);
             $i++;
 
         }

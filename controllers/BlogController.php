@@ -28,7 +28,7 @@ include (ROOT.'/models/mTool.php');
            $buildMenu = new mAuth();
            $buildedMenu = $buildMenu->menu_build();
 
-           include(ROOT .'/views/vListOfBlogs.php');
+           include(ROOT . '/views/vListOfBlogs0.php');
 
 
 

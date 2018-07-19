@@ -34,6 +34,8 @@ ob_start();
 
 
 <?php
+
+
 $content = ob_get_contents();
 ob_end_clean();
  //формуєм список блогів користувача для вставки в шаблон

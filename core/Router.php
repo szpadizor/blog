@@ -45,8 +45,8 @@
         // створюю шлях до необхідного контролера
     $controllerWay = ROOT.'/controllers/'.$controllerName.'.php';
     include ($controllerWay);
-   /* debug($controllerWay);
-    debug($action);*/
+    /*dd($controllerWay);
+     dd($action);*/
     $controllerRun = new $controllerName;
     $controllerRun->$action($divide);
         if($controllerRun == true){break;}
