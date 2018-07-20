@@ -4,7 +4,7 @@ ob_start();
 
 
 echo '<div align="center"  style="margin: 0 auto; width: 50%;">';
-echo $result1;
+
 echo'</div>';
 ?>
     <div align="center" class="container">

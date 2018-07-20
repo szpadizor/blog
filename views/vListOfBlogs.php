@@ -5,8 +5,9 @@ ob_start();
     <div style="margin-left: 20%">
 
 
-        <span>СОРТУВАННЯ :</span>
+
         <div class="bs-example">
+            <span>СОРТУВАННЯ :</span>
         <button type="button" class="btn btn-primary" id="sorter_by_date_up">по даті up </button>
         <button type="button" class="btn btn-primary" id="sorter_by_date">по даті down</button>
         <button type="button" class="btn btn-primary" id="sorter_by_views_up">по переглядах up</button>

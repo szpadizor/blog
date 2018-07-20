@@ -7,13 +7,14 @@
 ob_start()
 
 ?>
+<div class="container" align="center">
+    <img src="/tpl/img/auth.jpg" alt="logo">
+    <div class="col-3">
 
-<div align="center">
-<div class="col-3">
 
 
     <form class="form-signin" method="POST" action="/auth">
-        <img src="/tpl/img/auth.jpg" alt="logo">
+
         <br>
         <br>
         <h6>АВТОРИЗАЦІЯ</h6>

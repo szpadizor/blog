@@ -13,7 +13,7 @@ $('#sorter_by_date').click(function () {
         return b - a
        });
 
-    c.reverse();
+ c.reverse();
 
      $(c).appendTo(".sort_in_this")
 
@@ -33,7 +33,7 @@ $('#sorter_by_views_up').click(function () {
 
         return b - a
     });
-    c.reverse();
+  //  c.reverse();
 
     $(c).appendTo(".sort_in_this")
 
@@ -61,7 +61,7 @@ $(document).ready(function () {
             return b - a
         });
 
-       // c.reverse();
+    //   c.reverse();
 
         $(c).appendTo(".sort_in_this")
 
@@ -81,7 +81,7 @@ $(document).ready(function () {
 
             return b - a
         });
-        // c.reverse();
+       c.reverse();
 
         $(c).appendTo(".sort_in_this")
 
